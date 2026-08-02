@@ -586,9 +586,16 @@ body.detail-open .cards-view{display:none}
 }
 @media (max-width:640px){
   .doc{grid-template-columns:1fr}
-  /* 4:5 je tacan odnos same fotografije, pa se vidi cela, bez isecanja */
-  .doc-photo{min-height:0;aspect-ratio:4/5;max-height:70svh}
-  .doc-photo img{object-position:center top}
+  /* Cela fotografija (4:5 je njen odnos), ali manja i centrirana —
+     da ne zauzima celu sirinu kartice. Menja se jednim brojem ispod. */
+  .doc-photo{
+    min-height:0;aspect-ratio:4/5;
+    width:min(62%,230px);margin:26px auto 4px;
+    border-radius:18px;
+  }
+  .doc-photo img{object-position:center top;border-radius:inherit}
+  .doc-photo.has-photo::after{border-radius:inherit}
+  .doc-info{padding-top:18px}
   .gallery-grid{grid-auto-rows:150px}
   .shot.wide{grid-column:span 2}
 }
