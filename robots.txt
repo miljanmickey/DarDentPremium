@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /assets/tmp/
+
+Sitemap: https://www.dardent.rs/sitemap.xml
