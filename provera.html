@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dar Dent — provera slika</title>
+<style>
+  body{font:16px/1.6 -apple-system,"Segoe UI",Roboto,sans-serif;margin:0;padding:24px;color:#241A3C;background:#F7F5FC}
+  .box{max-width:640px;margin:0 auto;background:#fff;border:1px solid rgba(91,45,158,.15);border-radius:18px;padding:24px}
+  h1{font-size:1.3rem;margin:0 0 6px}
+  h2{font-size:.95rem;margin:26px 0 8px}
+  .path{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;word-break:break-all;background:#F3EFFB;padding:10px 12px;border-radius:10px}
+  .res{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(91,45,158,.12)}
+  .dot{width:12px;height:12px;border-radius:50%;flex:0 0 12px;background:#bbb}
+  .ok .dot{background:#1FA971}.bad .dot{background:#E11D48}
+  .ok b{color:#1FA971}.bad b{color:#E11D48}
+  img.t{height:44px;width:auto;border:1px dashed rgba(91,45,158,.3);border-radius:6px;padding:2px}
+  .verdict{margin-top:24px;padding:18px;border-radius:14px;background:#F3EFFB;font-size:.95rem}
+  .verdict strong{display:block;margin-bottom:6px}
+  ol{padding-left:20px;margin:8px 0 0}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Provera slika</h1>
+  <p>Ova stranica ne menja ništa. Samo pokušava da učita slike i kaže šta se dešava.</p>
+
+  <h2>Odakle je ova stranica otvorena</h2>
+  <div class="path" id="url">—</div>
+
+  <h2>Slika iz foldera <code>assets/</code></h2>
+  <div class="res" id="r1"><span class="dot"></span><span id="t1">učitavanje…</span></div>
+  <p style="margin:10px 0 0">Ako se ovde vidi logo, sve je u redu:<br><img class="t" id="ext" src="logo-mark.png" alt=""></p>
+
+  <h2>Ista slika ugrađena u stranicu</h2>
+  <div class="res" id="r2"><span class="dot"></span><span id="t2">učitavanje…</span></div>
+
+  <div class="verdict" id="verdict"><strong>Čekam rezultat…</strong></div>
+</div>
+
+<script>
+var url = location.href;
+document.getElementById("url").textContent = url;
+
+/* mala ugrađena sličica (ljubičasti kvadrat) — služi samo da se vidi
+   da li pregledač uopšte prikazuje slike */
+var INLINE = "data:image/gif;base64,R0lGODlhIAAgAPMAAF4tngAAAJzN+atfz////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAgACAAAAQ7EMhJq7046827/2AoBmRpnmiqrmzrvnAsz3Rt33iu73zv/8CgcEgsGo/IpHLJbDqf0Kh0Sq1ar9isFhMBADs=";
+
+function mark(id, ok, txt){
+  var el = document.getElementById(id);
+  el.className = "res " + (ok ? "ok" : "bad");
+  el.querySelector("span:last-child").innerHTML = txt;
+}
+
+var done = {a:null, b:null};
+function verdict(){
+  if(done.a === null || done.b === null) return;
+  var v = document.getElementById("verdict"), h, t;
+  if(done.a && done.b){
+    h = "Sve radi.";
+    t = "Slike se učitavaju kako treba. Ako ih na sajtu i dalje ne vidiš, javi — problem je onda negde drugde.";
+  } else if(!done.a && done.b){
+    h = "Folder assets nije uz ovu stranicu.";
+    t = "Pregledač prikazuje slike normalno, ali ne nalazi fajl <code>logo-mark.png</code>. Najčešći uzrok: stranica je otvorena <b>iz same zip datoteke</b>, bez raspakivanja — tada pregledač dobije samo taj jedan fajl, bez foldera pored njega." +
+        "<ol><li>Raspakuj zip do kraja (desni klik → Extract All / Raspakuj ovde).</li><li>Otvori folder i proveri da <code>index.html</code> i slike stoje u istom folderu.</li><li>Tek onda otvori <code>index.html</code>.</li></ol>";
+  } else if(done.a && !done.b){
+    h = "Neobično.";
+    t = "Fajl iz foldera se učitava, a ugrađena slika ne. To liči na dodatak u pregledaču koji blokira sadržaj.";
+  } else {
+    h = "Pregledač ne prikazuje slike.";
+    t = "Nijedna slika se ne učitava, ni ona ugrađena u samu stranicu. To znači da su slike blokirane u podešavanjima pregledača ili nekim dodatkom (na primer blokatorom reklama). Probaj drugi pregledač ili anonimni prozor.";
+  }
+  v.innerHTML = "<strong>" + h + "</strong>" + t;
+}
+
+var a = new Image();
+a.onload  = function(){ mark("r1", true,  "Fajl <b>assets/logo-mark.png</b> je učitan (" + a.naturalWidth + "×" + a.naturalHeight + " px)."); done.a = true;  verdict(); };
+a.onerror = function(){ mark("r1", false, "Fajl <b>assets/logo-mark.png</b> nije pronađen."); done.a = false; verdict(); };
+a.src = "logo-mark.png";
+
+var b = new Image();
+b.onload  = function(){ mark("r2", true,  "Ugrađena slika je prikazana."); done.b = true;  verdict(); };
+b.onerror = function(){ mark("r2", false, "Ni ugrađena slika se ne prikazuje."); done.b = false; verdict(); };
+b.src = INLINE;
+
+setTimeout(function(){
+  if(done.a === null){ done.a = false; mark("r1", false, "Fajl se ne učitava (isteklo vreme)."); }
+  if(done.b === null){ done.b = false; mark("r2", false, "Ugrađena slika se ne učitava (isteklo vreme)."); }
+  verdict();
+}, 5000);
+</script>
+</body>
+</html>

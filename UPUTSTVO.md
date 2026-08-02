@@ -134,3 +134,26 @@ Sajt je proveren na širinama od 320px naviše. Ključne odluke:
 - **Duge reči se prelamaju** umesto da probiju okvir — bitno za ruski, gde su reči najduže.
 
 Ako se dodaje nova stavka u meni ili duži tekst na dugme, vredi proveriti zaglavlje na 360px, jer tu ima najmanje vazduha.
+
+## Pre prelaska na domen dardent.rs
+
+Fotografije koje su sada na sajtu su **privremene, za prikaz klijentu**. Nisu snimljene u ovoj ordinaciji i ne smeju ostati na pravom domenu. Redom, sa imenima fajlova:
+
+| Gde | Fajl | Čime se menja |
+|---|---|---|
+| Prvi ekran + galerija | `enterijer.jpg` | fotografija same ordinacije |
+| Galerija — pre i posle | `pre-i-posle.jpg` | **obavezno njihov slučaj**, uz saglasnost pacijenta |
+| Galerija — tim | `tim-na-radu.jpg` | fotografija dr Vujović i kolege u radu |
+| Galerija — detalj | `detalj-prostora.jpg` | detalj njihovog prostora |
+| Galerija — oprema | `oprema.jpg` | njihova oprema |
+
+Nove slike zadržavaju ista imena fajlova i sve radi bez ijedne izmene u kodu. Ako imena budu drugačija, menjaju se na dva mesta u `index.html`: u `<figure class="hero-photo">` i u `<div class="gallery-grid">`.
+
+Fotografija „pre i posle" je posebno osetljiva: postavljena u galeriju ordinacije tvrdi da je to njihov rad. Ako svog slučaja nema, bolje je izbaciti taj okvir nego ostaviti tuđi.
+
+Uz to, pri prelasku na domen:
+
+1. U `index.html` i `sitemap.xml` zameniti `https://www.dardent.rs` stvarnom adresom, ako se razlikuje.
+2. Uneti tačne koordinate ordinacije u `"geo"` u JSON-LD.
+3. Prijaviti sajt u Google Search Console i poslati `sitemap.xml`.
+4. Otvoriti Google Business Profile sa istim nazivom, adresom i telefonom kao na sajtu.
