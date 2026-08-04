@@ -38,7 +38,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- ============ Structured data (Enhanced SEO) ============ -->
 <script type="application/ld+json">
@@ -128,7 +128,7 @@
   --grad:linear-gradient(115deg,#3D1476 0%,#6B2AAE 26%,#A25FE0 52%,#5E9BDC 82%,#9CCDF9 100%);
   --grad-soft:linear-gradient(115deg,rgba(107,42,174,.10),rgba(94,155,220,.11));
 
-  --display:"Cormorant Garamond",Georgia,serif;
+  --display:"Manrope",-apple-system,"Segoe UI",Roboto,sans-serif;
   --body:"Manrope",-apple-system,"Segoe UI",Roboto,sans-serif;
 
   --r-lg:26px; --r-md:18px; --r-sm:12px;
@@ -137,8 +137,7 @@
   --pad:clamp(20px,5vw,64px);
   --maxw:1180px;
 
-  /* Cormorant ima nisku x-visinu; cirilica nema uzlazne poteze kao latinica,
-     pa na istoj velicini deluje sitnije. Ovo je izjednacava. */
+  /* Korekcija opticke velicine cirilice u naslovima. */
   --disp:1;
 }
 html[lang="ru"]{--disp:1.075}
@@ -755,6 +754,30 @@ body.detail-open .cards-view{display:none}
   .hero h1{font-size:calc(2.15rem*var(--disp));max-width:16ch}
   .hero .lead{font-size:1.02rem}
 }
+
+
+/* ==========================================================
+   TIPOGRAFIJA — Manrope na celom sajtu.
+   Menja se iskljucivo porodica fonta i debljine po zadatoj skali.
+   Velicine, prored, razmak slova, boje i razmaci ostaju netaknuti.
+   ========================================================== */
+h1, h2, h3, h4, h5, h6,
+button, input, select, textarea, optgroup,
+.brand-name, .quote, .stat b, .step::before, .row-num,
+.footer-tag, .why-note h3, .acc-name, .card h3, .detail-head h3,
+.doc-info h3, .why-card h3{
+  font-family:"Manrope",-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+
+/* debljine po zadatoj skali */
+.hero h1{font-weight:800}          /* naslov prve sekcije */
+h2{font-weight:700}                /* naslovi sekcija */
+h3, h4, h5, h6{font-weight:600}    /* naslovi kartica */
+.nav a{font-weight:600}            /* navigacija */
+.btn{font-weight:600}              /* dugmad */
+.field label{font-weight:500}      /* oznake u formi */
+body{font-weight:400}              /* tekst */
+.footer-col a, .footer-col p, .footer-bottom, .footer-tag{font-weight:400}
 
 </style>
 </head>
