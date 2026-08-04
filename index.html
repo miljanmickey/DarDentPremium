@@ -195,7 +195,7 @@ section{padding-block:clamp(72px,10vw,130px);position:relative}
 .site-header.scrolled{border-bottom-color:var(--line);background:rgba(255,255,255,.9);padding-block:8px}
 .header-inner{display:flex;align-items:center;gap:clamp(12px,1.6vw,22px);max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
 .brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
-.brand picture,.sign-plate picture,.about-visual picture,.hero-photo picture{display:block;line-height:0}
+.brand picture,.about-visual picture,.hero-photo picture{display:block;line-height:0}
 .hero-photo picture{height:100%}
 .brand-mark{height:44px;width:auto;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .brand:hover .brand-mark{transform:rotate(-5deg) scale(1.07)}
@@ -249,40 +249,16 @@ body.night .hero{
 body.night .hero .lead,body.night .hero h1{color:#fff}
 body.night .hero .lead{color:rgba(255,255,255,.72)}
 body.night .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25)}
-body.night .sign-toggle{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.8)}
 
 .hero-inner{
   display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,70px);
   align-items:center;position:relative;z-index:2;width:100%;
 }
 .hero-copy{display:grid;justify-items:start;gap:24px}
-.sign-stage{perspective:1100px;width:min(400px,86%);margin-left:-8px}
-.sign{
-  transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1);will-change:transform;
-}
-.sign-plate{
-  padding:clamp(14px,3vw,26px);border-radius:30px;
-  transition:background .9s ease,box-shadow .9s ease;
-  filter:drop-shadow(0 22px 30px rgba(58,19,112,.16));
-}
-.sign-plate img{width:100%;height:auto}
-body.night .sign-plate{
-  background:rgba(255,255,255,.94);
-  box-shadow:0 0 46px rgba(139,71,207,.85),0 0 110px rgba(94,155,220,.5),0 26px 50px -20px rgba(0,0,0,.6);
-  filter:none;
-}
-.hero h1{font-size:calc(clamp(2.3rem,4.6vw,3.9rem)*var(--disp));max-width:15ch}
+body.night .hero h1{font-size:calc(clamp(2.3rem,4.6vw,3.9rem)*var(--disp));max-width:15ch}
 .hero h1 em{font-style:italic;font-weight:300}
 .hero .lead{margin:0}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:2px}
-.sign-toggle{
-  margin-top:2px;display:inline-flex;align-items:center;gap:9px;cursor:pointer;
-  background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 18px;
-  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);
-  transition:.35s;
-}
-.sign-toggle:hover{border-color:var(--violet-500);color:var(--violet-700)}
-.sign-toggle .dot{width:8px;height:8px;border-radius:50%;background:var(--sky-400);box-shadow:0 0 0 0 rgba(94,155,220,.6);animation:pulse 2.6s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(94,155,220,0)}100%{box-shadow:0 0 0 0 rgba(94,155,220,0)}}
 .hero-photo{
   margin:0;aspect-ratio:4/4.6;border-radius:calc(var(--r-lg) + 10px);padding:12px;
@@ -569,8 +545,7 @@ body.detail-open .cards-view{display:none}
   .split,.contact-grid,.footer-grid{grid-template-columns:1fr}
   .hero-inner{grid-template-columns:1fr;gap:38px}
   .hero-photo{aspect-ratio:4/5;max-width:340px;margin-inline:auto}
-  .sign-stage{width:min(340px,80%)}
-
+  
 }
 @media (max-width:640px){
   body{font-size:16px}
@@ -623,8 +598,7 @@ body.detail-open .cards-view{display:none}
   .hero-copy{gap:20px}
   .hero-actions{width:100%}
   .hero-actions .btn{flex:1 1 100%;justify-content:center}
-  .sign-stage{width:min(300px,88%)}
-
+  
   /* galerija: dve kolone su preuske za natpise */
   .gallery-grid{grid-template-columns:1fr;grid-auto-rows:220px;gap:12px}
   .shot.wide,.shot.tall{grid-column:auto;grid-row:auto}
@@ -652,7 +626,6 @@ body.detail-open .cards-view{display:none}
   .brand-word{height:15px}
   .lang button{padding:8px 6px;font-size:.61rem;letter-spacing:.02em}
   .hero h1{font-size:calc(2.05rem*var(--disp))}
-  .sign-toggle{font-size:.68rem;padding:8px 14px;letter-spacing:.1em}
   .card{padding:24px 20px 22px}
   .doc-info{padding:24px 20px}
   .detail-head h3{font-size:calc(1.75rem*var(--disp))}
@@ -751,6 +724,38 @@ body.detail-open .cards-view{display:none}
 @media (max-width:520px){
   .why-note .btn{width:100%;justify-content:center}
 }
+/* Galerija: ista mreza i isti raspored polja — samo bez razmaka izmedju
+   slika i sa visim redovima, da bi same fotografije bile vece. */
+.gallery-grid{gap:2px;grid-auto-rows:250px}
+@media (max-width:980px){ .gallery-grid{gap:2px;grid-auto-rows:210px} }
+@media (max-width:520px){ .gallery-grid{gap:2px;grid-auto-rows:260px} }
+.shot{padding:0;border:0}
+
+/* Galerija: raspored ostaje netaknut — menjaju se samo sirine kolona.
+   Enterijer stoji u 1. koloni, detalj prostora u 2, tim na radu u 4.
+   Te tri kolone su sire, a 3. je uza (nju koriste samo siroka polja,
+   koja i dalje zauzimaju po dve kolone). Nista se ne pomera. */
+@media (min-width:981px){
+  .gallery-grid{grid-template-columns:1.2fr 1.2fr .4fr 1.2fr}
+}
+
+/* Hero bez logotipa: naslov preuzima ulogu koju je imao znak, pa je veci
+   i ima vise vazduha oko sebe. Natpis iznad njega drzi levu ivicu. */
+.hero-copy{gap:22px}
+.hero-copy .eyebrow{margin:0}
+.hero h1{font-size:calc(clamp(2.5rem,5.1vw,4.3rem)*var(--disp));max-width:14ch}
+.hero .lead{font-size:1.1rem;max-width:46ch}
+.hero-actions{margin-top:8px}
+
+@media (max-width:980px){
+  .hero{padding-top:118px}
+  .hero h1{font-size:calc(clamp(2.4rem,7vw,3.4rem)*var(--disp))}
+}
+@media (max-width:520px){
+  .hero h1{font-size:calc(2.15rem*var(--disp));max-width:16ch}
+  .hero .lead{font-size:1.02rem}
+}
+
 </style>
 </head>
 <body>
@@ -804,13 +809,7 @@ body.detail-open .cards-view{display:none}
 <section class="hero" id="hero">
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <div class="sign-stage">
-        <div class="sign" id="sign">
-          <div class="sign-plate">
-            <img src="logo-full.png" width="800" height="573" alt="Dar Dent — stomatološka ordinacija" fetchpriority="high">
-          </div>
-        </div>
-      </div>
+      <p class="eyebrow reveal" data-i18n="heroEyebrow">Stomatološka ordinacija · Novi Sad</p>
 
       <h1 class="reveal" data-i18n="heroTitle">Transformišemo osmeh. <em>Budimo samopouzdanje.</em></h1>
       <p class="lead reveal" data-d="1" data-i18n="heroLead">Ordinacija u kojoj se nauka susreće sa estetikom — mirno, precizno i bez žurbe. Vodi je dr Darija Vujović.</p>
@@ -819,8 +818,6 @@ body.detail-open .cards-view{display:none}
         <a class="btn btn-primary" href="#kontakt" data-i18n="ctaBook">Zakaži pregled</a>
         <a class="btn btn-ghost" href="#usluge" data-i18n="ctaServices">Pogledaj usluge</a>
       </div>
-
-      <button class="sign-toggle" id="signToggle"><span class="dot"></span>Uključi svetleći znak</button>
     </div>
 
     <figure class="hero-photo reveal" data-d="1">
@@ -1157,6 +1154,7 @@ function setUrl(mode, state, url){
    `npm run check` to proverava. */
 const I18N = {
   sr:{
+    heroEyebrow:"Stomatološka ordinacija · Novi Sad",
     whyTitle:"Zašto odabrati Dar Dent?",
     whySub:"Nova ordinacija, savremen pristup i potpuna posvećenost svakom pacijentu od prve posete.",
     w1:"Individualan pristup",w1d:"Svakom pacijentu posvećujemo dovoljno vremena kako bismo pronašli najbolje rešenje za njegove potrebe.",
@@ -1223,6 +1221,7 @@ const I18N = {
     rights:"Sva prava zadržana.",madeIn:"Srpski · Русский · English"
   },
   ru:{
+    heroEyebrow:"Стоматологическая клиника · Нови-Сад",
     whyTitle:"Почему Dar Dent?",
     whySub:"Новая клиника, современный подход и полная отдача каждому пациенту с первого визита.",
     w1:"Индивидуальный подход",w1d:"Каждому пациенту уделяем достаточно времени, чтобы найти решение, которое подходит именно ему.",
@@ -1289,6 +1288,7 @@ const I18N = {
     rights:"Все права защищены.",madeIn:"Srpski · Русский · English"
   },
   en:{
+    heroEyebrow:"Dental clinic · Novi Sad",
     whyTitle:"Why choose Dar Dent?",
     whySub:"A new clinic, a modern approach and full dedication to every patient from the very first visit.",
     w1:"An individual approach",w1d:"We give every patient enough time to find the solution that genuinely fits their needs.",
@@ -1392,10 +1392,6 @@ function setLang(lang){
     if(k in t) el.setAttribute("alt", t[k]);
   });
 
-  // dugme za svetleći znak zavisi od stanja
-  const st = document.getElementById("signToggle");
-  st.lastChild.nodeValue = document.body.classList.contains("night") ? t.signNight : t.signDay;
-
   document.querySelectorAll(".lang button").forEach(b=>{
     const on = b.dataset.lang === lang;
     b.classList.toggle("active", on);
@@ -1424,29 +1420,6 @@ document.querySelectorAll(".lang button").forEach(b=>{
   const browser = ["sr","ru","en"].includes(nav) ? nav : "sr";
   setLang(urlLang && I18N[urlLang] ? urlLang : (saved && I18N[saved] ? saved : browser));
 })();
-
-/* =========================================================
-   3. SVETLEĆI ZNAK (dan / noć) + 3D nagib
-   ========================================================= */
-const signToggle = document.getElementById("signToggle");
-signToggle.addEventListener("click", ()=>{
-  document.body.classList.toggle("night");
-  const t = I18N[currentLang];
-  signToggle.lastChild.nodeValue = document.body.classList.contains("night") ? t.signNight : t.signDay;
-});
-
-const sign = document.getElementById("sign");
-const stage = document.querySelector(".sign-stage");
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if(stage && !reduceMotion && window.matchMedia("(pointer:fine)").matches){
-  stage.addEventListener("mousemove", e=>{
-    const r = stage.getBoundingClientRect();
-    const x = (e.clientX - r.left)/r.width - .5;
-    const y = (e.clientY - r.top)/r.height - .5;
-    sign.style.transform = `rotateY(${x*16}deg) rotateX(${-y*13}deg) translateZ(24px)`;
-  });
-  stage.addEventListener("mouseleave", ()=>{ sign.style.transform = "rotateY(0) rotateX(0)"; });
-}
 
 /* =========================================================
    4. HEADER, MENI, ANIMACIJE PRI SKROLU
