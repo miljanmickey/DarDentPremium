@@ -78,7 +78,7 @@ U padajućem meniju kontakt forme stoji sedam oblasti (ne 47 stavki) — pacijen
 
 ## Adresa i mapa
 
-Adresa **Milovana Glišića 4, Novi Sad** je uneta na svih pet mesta gde je bitna: u sekciji Kontakt, u futeru, u Google mapi, u `LocalBusiness` schema podacima i u naslovu i opisu stranice za Google. Na ruskom je ulica ostavljena latinicom (`Milovana Glišića 4, Нови-Сад`) namerno — tako ruski pacijent može da je iskopira u navigaciju bez greške.
+Adresa **Milovana Glišića 3, Novi Sad** je uneta na svih pet mesta gde je bitna: u sekciji Kontakt, u futeru, u Google mapi, u `LocalBusiness` schema podacima i u naslovu i opisu stranice za Google. Na ruskom je ulica ostavljena latinicom (`Milovana Glišića 3, Нови-Сад`) namerno — tako ruski pacijent može da je iskopira u navigaciju bez greške.
 
 **Jedno treba proveriti:** koordinate u JSON-LD-u (`45.2517, 19.8369`) su približne za taj deo Novog Sada. Tačne se dobiju tako što se u Google Maps klikne desnim tasterom na ordinaciju i izaberu koordinate, pa se zamene u `"geo"`. Nije kritično jer Google prvenstveno koristi tekstualnu adresu, ali je preciznije.
 
@@ -100,7 +100,6 @@ Po dogovoru, cene se **ne prikazuju** na sajtu. U sekciji „Kako radimo" stoji 
 - `hreflang` za sr/ru/en + `x-default`
 - Open Graph i Twitter kartice (za lep prikaz linka na Facebook-u, Instagram-u, Viber-u)
 - **Schema.org `Dentist`** — ime, telefon, adresa, radno vreme, oba lekara, katalog usluga. Ovo je ono što izvlači „rich result" u Google pretrazi i pomaže na Google Maps-u.
-- **Schema.org `FAQPage`** — česta pitanja mogu da se prikažu direktno u rezultatima pretrage
 - `robots.txt` i `sitemap.xml` sa jezičkim varijantama
 - Semantički HTML (`header`, `main`, `section`, `article`), jedan `h1`, opisni `alt` tekstovi
 - Brzo učitavanje: nema biblioteka, nema jQuery-ja, ikonice su inline SVG
@@ -157,3 +156,18 @@ Uz to, pri prelasku na domen:
 2. Uneti tačne koordinate ordinacije u `"geo"` u JSON-LD.
 3. Prijaviti sajt u Google Search Console i poslati `sitemap.xml`.
 4. Otvoriti Google Business Profile sa istim nazivom, adresom i telefonom kao na sajtu.
+
+## Politika privatnosti i uslovi korišćenja
+
+Dve zasebne stranice, `privatnost.html` i `uslovi.html`, povezane iz futera i upisane u sitemap. Na sva tri jezika, sa istim prekidačem jezika kao sajt (izbor se pamti između stranica).
+
+**Ovo je nacrt koji mora da pregleda pravnik ili sama klijentkinja pre nego što sajt ode na pravi domen.** Napisan je prema tome kako sajt stvarno radi — bez kolačića za praćenje, bez analitike, forma ne šalje podatke na server nego otvara WhatsApp — pa je tačan u tom delu. Ali stavke koje se tiču vođenja zdravstvene dokumentacije u ordinaciji su opšte i moraju se uskladiti sa njihovom praksom.
+
+Konkretno treba proveriti:
+
+- podatke o rukovaocu (pun naziv pravnog lica, matični broj, PIB, mejl za zahteve o podacima)
+- koliko dugo se čuva zdravstvena dokumentacija i po kom propisu
+- da li postoji obrazac saglasnosti za objavljivanje fotografija pacijenata
+- da li ordinacija koristi neki softver za kartone ili zakazivanje, jer bi i on morao biti pomenut
+
+Datum „poslednja izmena" stoji na dnu obe stranice i menja se ključem `updated` u `I18N` objektu te stranice.

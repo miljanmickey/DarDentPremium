@@ -11,4 +11,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.dardent.rs/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.dardent.rs/"/>
   </url>
+  <url>
+    <loc>https://www.dardent.rs/privatnost.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dardent.rs/uslovi.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

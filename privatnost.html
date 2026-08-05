@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=" js";</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#5B2D9E">
+<title>Politika privatnosti — Dar Dent</title>
+<meta name="description" content="Ova politika objašnjava koje podatke Dar Dent prikuplja preko ovog sajta, zašto i šta vi možete da tražite u vezi sa njima. Pisana je jednostavno, jer je t">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --violet-900:#3A1370;--violet-700:#5B2D9E;--violet-500:#8B47CF;
+  --sky-400:#5E9BDC;--sky-200:#9CCDF9;
+  --ink:#241A3C;--ink-soft:#5C5476;--paper:#F7F5FC;--line:rgba(91,45,158,.15);
+  --grad:linear-gradient(115deg,#3D1476 0%,#6B2AAE 26%,#A25FE0 52%,#5E9BDC 82%,#9CCDF9 100%);
+  --grad-soft:linear-gradient(115deg,rgba(107,42,174,.10),rgba(94,155,220,.11));
+  --body:"Manrope",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r-lg:26px;--pad:clamp(20px,5vw,64px);
+  --shadow:0 24px 60px -28px rgba(58,19,112,.30);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.75;overflow-wrap:break-word}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--violet-700);outline-offset:3px;border-radius:6px}
+.wrap{max-width:820px;margin:0 auto;padding-inline:var(--pad)}
+
+.lgl-top{border-bottom:1px solid var(--line);background:rgba(255,255,255,.9);backdrop-filter:blur(14px);position:sticky;top:0;z-index:10}
+.lgl-top .wrap{max-width:1180px;display:flex;align-items:center;gap:14px;padding-block:12px}
+.lgl-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:0 0 auto}
+.lgl-brand img{height:34px;width:auto;display:block}
+.lgl-back{margin-left:auto;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--violet-700);text-decoration:none;white-space:nowrap}
+.lgl-back:hover{text-decoration:underline}
+.lang{display:flex;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff;flex:0 0 auto}
+.lang button{border:0;background:transparent;cursor:pointer;border-radius:999px;padding:7px 10px;font:inherit;font-size:.7rem;font-weight:700;letter-spacing:.06em;color:var(--ink-soft);transition:.3s}
+.lang button.active{background:var(--grad);color:#fff}
+
+.lgl-head{padding-block:clamp(46px,7vw,84px) clamp(26px,3vw,38px);background:linear-gradient(180deg,var(--paper),#fff)}
+.lgl-head h1{font-size:clamp(2rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin:0 0 14px}
+.lgl-head p{margin:0;color:var(--ink-soft);font-size:1.04rem}
+.lgl-body{padding-bottom:clamp(56px,8vw,96px)}
+.lgl-sec{margin-top:clamp(30px,4vw,46px)}
+.lgl-sec h2{font-size:1.22rem;font-weight:700;letter-spacing:-.01em;margin:0 0 10px;color:var(--violet-900)}
+.lgl-sec p{margin:0 0 12px;color:var(--ink-soft)}
+.lgl-meta{margin-top:clamp(40px,5vw,60px);padding-top:22px;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-soft)}
+.lgl-foot{background:linear-gradient(180deg,var(--paper),#EFE8FA);border-top:1px solid var(--line);padding-block:26px;font-size:.84rem;color:var(--ink-soft)}
+.lgl-foot .wrap{max-width:1180px;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+.lgl-foot a{color:var(--violet-700);text-decoration:none}
+.lgl-foot a:hover{text-decoration:underline}
+@media (max-width:520px){
+  .lgl-brand img{height:28px}
+  .lang button{padding:7px 8px;font-size:.64rem}
+  .lgl-back{display:none}
+  .lgl-foot .wrap{flex-direction:column;gap:8px}
+}
+/* Mobilni audit: dodirne površine i ponašanje na dodir. */
+.lang button{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+@media (hover:none){ .lgl-foot a:hover,.lgl-back:hover{text-decoration:none} }
+</style>
+</head>
+<body>
+
+<header class="lgl-top">
+  <div class="wrap">
+    <a class="lgl-brand" href="index.html" aria-label="Dar Dent">
+      <img src="logo-mark.png" width="160" height="112" alt="">
+      <img src="logo-wordmark.png" width="300" height="60" alt="Dar Dent" style="height:18px">
+    </a>
+    <div class="lang" role="group" aria-label="Jezik / Language">
+      <button data-lang="sr" class="active" aria-pressed="true">SR</button>
+      <button data-lang="ru" aria-pressed="false">RU</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="lgl-back" href="index.html" data-i18n="back">Nazad na sajt</a>
+  </div>
+</header>
+
+<main>
+  <div class="lgl-head">
+    <div class="wrap">
+      <h1 data-i18n="docTitle">Politika privatnosti</h1>
+      <p data-i18n="docIntro">Ova politika objašnjava koje podatke Dar Dent prikuplja preko ovog sajta, zašto i šta vi možete da tražite u vezi sa njima. Pisana je jednostavno, jer je tako i korisnija.</p>
+    </div>
+  </div>
+
+  <div class="lgl-body">
+    <div class="wrap">
+      <section class="lgl-sec">
+        <h2 data-i18n="h1">Ko je odgovoran za vaše podatke</h2>
+        <p data-i18n="p1_1">Stomatološka ordinacija Dar Dent, Milovana Glišića 3, Novi Sad, Srbija. Telefon: +381 64 1434895.</p>
+        <p data-i18n="p1_2">Za sva pitanja u vezi sa podacima možete nas kontaktirati na isti broj, telefonom ili preko WhatsApp-a.</p>
+      </section>
+      <section class="lgl-sec">
+        <h2 data-i18n="h2">Šta sajt prikuplja</h2>
+        <p data-i18n="p2_1">Ovaj sajt nema korisničke naloge, ne postavlja kolačiće za praćenje i ne koristi alate za analitiku. Ne vodimo evidenciju o tome ko ga je posetio.</p>
+        <p data-i18n="p2_2">Jedino što se pamti u vašem pregledaču jeste jezik koji ste izabrali, da biste ga pri sledećoj poseti zatekli istog. Taj podatak ostaje na vašem uređaju i nama nije dostupan. Brišete ga brisanjem podataka pregledača.</p>
+      </section>
+      <section class="lgl-sec">
+        <h2 data-i18n="h3">Forma za zakazivanje</h2>
+        <p data-i18n="p3_1">Podaci koje unesete u formu ne šalju se nama preko sajta i nigde se na njemu ne čuvaju. Klikom na dugme otvara se WhatsApp sa već sastavljenom porukom, koju vi šaljete sami.</p>
+        <p data-i18n="p3_2">Od tog trenutka poruka postoji u vašem i našem WhatsApp nalogu, pod uslovima kompanije Meta. Sadržaj poruke koristimo samo da bismo vam odgovorili i zakazali termin.</p>
+      </section>
+      <section class="lgl-sec">
+        <h2 data-i18n="h4">Usluge trećih strana</h2>
+        <p data-i18n="p4_1">Sajt učitava fontove sa Google Fonts i prikazuje mapu preko Google Maps. Pri tome vaš pregledač šalje Google-u svoju IP adresu, jer bez toga ne može da preuzme sadržaj. Na to nemamo uticaja i taj podatak ne dobijamo.</p>
+        <p data-i18n="p4_2">Sajt je postavljen na hosting koji, kao i svaki drugi, vodi tehničke zapise o pristupu.</p>
+      </section>
+      <section class="lgl-sec">
+        <h2 data-i18n="h5">Podaci pacijenata u ordinaciji</h2>
+        <p data-i18n="p5_1">Zdravstveni podaci koji nastanu prilikom pregleda i terapije vode se u ordinaciji, odvojeno od sajta, u skladu sa propisima o zdravstvenoj dokumentaciji i zaštiti podataka o ličnosti. Ne objavljuju se i ne prosleđuju trećim licima bez vaše saglasnosti ili zakonske obaveze.</p>
+        <p data-i18n="p5_2">Fotografije pre i posle terapije objavljujemo samo uz izričitu saglasnost pacijenta, koja se u svakom trenutku može povući.</p>
+      </section>
+      <section class="lgl-sec">
+        <h2 data-i18n="h6">Vaša prava</h2>
+        <p data-i18n="p6_1">Imate pravo da tražite uvid u podatke koje o vama vodimo, njihovu ispravku, brisanje ili ograničenje obrade, kao i da uložite prigovor. Zahtev možete uputiti na broj naveden gore.</p>
+        <p data-i18n="p6_2">Ako smatrate da su vam prava povređena, možete se obratiti Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.</p>
+      </section>
+      <section class="lgl-sec">
+        <h2 data-i18n="h7">Izmene</h2>
+        <p data-i18n="p7_1">Ovu politiku možemo dopuniti ako se način rada sajta promeni. Datum poslednje izmene naveden je na dnu strane.</p>
+      </section>
+
+      <p class="lgl-meta" data-i18n="updated">Poslednja izmena: avgust 2026.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="lgl-foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Dar Dent. <span data-i18n="rights">Sva prava zadržana.</span></span>
+    <span><a href="uslovi.html" data-i18n="other">Uslovi korišćenja</a> · <a href="index.html" data-i18n="back">Nazad na sajt</a></span>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+ "sr": {
+  "docTitle": "Politika privatnosti",
+  "docIntro": "Ova politika objašnjava koje podatke Dar Dent prikuplja preko ovog sajta, zašto i šta vi možete da tražite u vezi sa njima. Pisana je jednostavno, jer je tako i korisnija.",
+  "h1": "Ko je odgovoran za vaše podatke",
+  "p1_1": "Stomatološka ordinacija Dar Dent, Milovana Glišića 3, Novi Sad, Srbija. Telefon: +381 64 1434895.",
+  "p1_2": "Za sva pitanja u vezi sa podacima možete nas kontaktirati na isti broj, telefonom ili preko WhatsApp-a.",
+  "h2": "Šta sajt prikuplja",
+  "p2_1": "Ovaj sajt nema korisničke naloge, ne postavlja kolačiće za praćenje i ne koristi alate za analitiku. Ne vodimo evidenciju o tome ko ga je posetio.",
+  "p2_2": "Jedino što se pamti u vašem pregledaču jeste jezik koji ste izabrali, da biste ga pri sledećoj poseti zatekli istog. Taj podatak ostaje na vašem uređaju i nama nije dostupan. Brišete ga brisanjem podataka pregledača.",
+  "h3": "Forma za zakazivanje",
+  "p3_1": "Podaci koje unesete u formu ne šalju se nama preko sajta i nigde se na njemu ne čuvaju. Klikom na dugme otvara se WhatsApp sa već sastavljenom porukom, koju vi šaljete sami.",
+  "p3_2": "Od tog trenutka poruka postoji u vašem i našem WhatsApp nalogu, pod uslovima kompanije Meta. Sadržaj poruke koristimo samo da bismo vam odgovorili i zakazali termin.",
+  "h4": "Usluge trećih strana",
+  "p4_1": "Sajt učitava fontove sa Google Fonts i prikazuje mapu preko Google Maps. Pri tome vaš pregledač šalje Google-u svoju IP adresu, jer bez toga ne može da preuzme sadržaj. Na to nemamo uticaja i taj podatak ne dobijamo.",
+  "p4_2": "Sajt je postavljen na hosting koji, kao i svaki drugi, vodi tehničke zapise o pristupu.",
+  "h5": "Podaci pacijenata u ordinaciji",
+  "p5_1": "Zdravstveni podaci koji nastanu prilikom pregleda i terapije vode se u ordinaciji, odvojeno od sajta, u skladu sa propisima o zdravstvenoj dokumentaciji i zaštiti podataka o ličnosti. Ne objavljuju se i ne prosleđuju trećim licima bez vaše saglasnosti ili zakonske obaveze.",
+  "p5_2": "Fotografije pre i posle terapije objavljujemo samo uz izričitu saglasnost pacijenta, koja se u svakom trenutku može povući.",
+  "h6": "Vaša prava",
+  "p6_1": "Imate pravo da tražite uvid u podatke koje o vama vodimo, njihovu ispravku, brisanje ili ograničenje obrade, kao i da uložite prigovor. Zahtev možete uputiti na broj naveden gore.",
+  "p6_2": "Ako smatrate da su vam prava povređena, možete se obratiti Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.",
+  "h7": "Izmene",
+  "p7_1": "Ovu politiku možemo dopuniti ako se način rada sajta promeni. Datum poslednje izmene naveden je na dnu strane.",
+  "back": "Nazad na sajt",
+  "updated": "Poslednja izmena: avgust 2026.",
+  "other": "Uslovi korišćenja",
+  "otherPriv": "Politika privatnosti",
+  "rights": "Sva prava zadržana."
+ },
+ "ru": {
+  "docTitle": "Политика конфиденциальности",
+  "docIntro": "Эта политика объясняет, какие данные Dar Dent собирает через этот сайт, зачем и что вы можете в связи с ними требовать. Написана простым языком — так от неё больше пользы.",
+  "h1": "Кто отвечает за ваши данные",
+  "p1_1": "Стоматологическая клиника Dar Dent, Milovana Glišića 3, Нови-Сад, Сербия. Телефон: +381 64 1434895.",
+  "p1_2": "По всем вопросам о данных вы можете связаться с нами по тому же номеру — по телефону или через WhatsApp.",
+  "h2": "Что собирает сайт",
+  "p2_1": "На этом сайте нет учётных записей, нет отслеживающих файлов cookie и нет систем аналитики. Мы не ведём учёт посетителей.",
+  "p2_2": "Единственное, что сохраняется в вашем браузере, — выбранный язык, чтобы при следующем визите он остался прежним. Эти данные остаются на вашем устройстве и нам недоступны. Удаляются очисткой данных браузера.",
+  "h3": "Форма записи",
+  "p3_1": "Данные, введённые в форму, не отправляются нам через сайт и нигде на нём не сохраняются. По нажатию кнопки открывается WhatsApp с уже готовым сообщением, которое вы отправляете сами.",
+  "p3_2": "С этого момента сообщение существует в вашем и нашем аккаунте WhatsApp на условиях компании Meta. Содержание сообщения мы используем только чтобы ответить и записать вас на приём.",
+  "h4": "Сторонние сервисы",
+  "p4_1": "Сайт загружает шрифты с Google Fonts и показывает карту через Google Maps. При этом ваш браузер передаёт Google свой IP-адрес — иначе он не сможет получить содержимое. На это мы не влияем и этих данных не получаем.",
+  "p4_2": "Сайт размещён на хостинге, который, как и любой другой, ведёт технические журналы доступа.",
+  "h5": "Данные пациентов в клинике",
+  "p5_1": "Медицинские данные, возникающие при осмотре и лечении, ведутся в клинике отдельно от сайта, в соответствии с правилами о медицинской документации и защите персональных данных. Они не публикуются и не передаются третьим лицам без вашего согласия или законной обязанности.",
+  "p5_2": "Фотографии «до и после» мы публикуем только с прямого согласия пациента, которое можно отозвать в любой момент.",
+  "h6": "Ваши права",
+  "p6_1": "Вы вправе запросить доступ к данным, которые мы о вас ведём, их исправление, удаление или ограничение обработки, а также подать возражение. Запрос можно направить по указанному выше номеру.",
+  "p6_2": "Если вы считаете, что ваши права нарушены, вы можете обратиться к Уполномоченному по защите персональных данных Республики Сербия.",
+  "h7": "Изменения",
+  "p7_1": "Мы можем дополнить эту политику, если изменится работа сайта. Дата последнего изменения указана внизу страницы.",
+  "back": "На сайт",
+  "updated": "Последнее изменение: август 2026 г.",
+  "other": "Условия использования",
+  "otherPriv": "Политика конфиденциальности",
+  "rights": "Все права защищены."
+ },
+ "en": {
+  "docTitle": "Privacy Policy",
+  "docIntro": "This policy explains what data Dar Dent collects through this website, why, and what you can ask for in relation to it. It is written in plain language, because that makes it more useful.",
+  "h1": "Who is responsible for your data",
+  "p1_1": "Dar Dent dental clinic, Milovana Glišića 3, Novi Sad, Serbia. Phone: +381 64 1434895.",
+  "p1_2": "For any question about your data you can reach us on the same number, by phone or on WhatsApp.",
+  "h2": "What the site collects",
+  "p2_1": "This site has no user accounts, sets no tracking cookies and uses no analytics tools. We keep no record of who visits it.",
+  "p2_2": "The only thing stored in your browser is the language you chose, so it stays the same on your next visit. That stays on your device and is not available to us. Clearing your browser data removes it.",
+  "h3": "The booking form",
+  "p3_1": "What you type into the form is not sent to us through the site and is not stored anywhere on it. Pressing the button opens WhatsApp with a ready-made message, which you send yourself.",
+  "p3_2": "From that point the message exists in your WhatsApp account and ours, under Meta's terms. We use its content only to reply and arrange an appointment.",
+  "h4": "Third-party services",
+  "p4_1": "The site loads fonts from Google Fonts and shows a map through Google Maps. In doing so your browser sends Google its IP address, because otherwise it cannot fetch the content. We have no influence over this and do not receive that data.",
+  "p4_2": "The site is hosted on a service which, like any other, keeps technical access logs.",
+  "h5": "Patient records at the clinic",
+  "p5_1": "Health data created during examination and treatment is kept at the clinic, separately from the website, in line with the rules on medical records and personal data protection. It is not published or passed to third parties without your consent or a legal obligation.",
+  "p5_2": "Before-and-after photographs are published only with the patient's explicit consent, which can be withdrawn at any time.",
+  "h6": "Your rights",
+  "p6_1": "You have the right to ask what data we hold about you, and to request its correction, deletion or restriction, as well as to object to processing. Requests can be sent to the number above.",
+  "p6_2": "If you believe your rights have been breached, you may contact the Serbian Commissioner for Information of Public Importance and Personal Data Protection.",
+  "h7": "Changes",
+  "p7_1": "We may update this policy if the way the site works changes. The date of the last change is shown at the bottom of the page.",
+  "back": "Back to the site",
+  "updated": "Last updated: August 2026",
+  "other": "Terms of Use",
+  "otherPriv": "Privacy Policy",
+  "rights": "All rights reserved."
+ }
+};
+let currentLang = "sr";
+function setLang(lang){
+  const t = I18N[lang]; if(!t) return;
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.title = t.docTitle + " — Dar Dent";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(k in t) el.textContent = t[k];
+  });
+  document.querySelectorAll(".lang button").forEach(b=>{
+    const on = b.dataset.lang === lang;
+    b.classList.toggle("active", on);
+    b.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  try{ localStorage.setItem("dd_lang", lang); }catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(b=>{
+  b.addEventListener("click", ()=> setLang(b.dataset.lang));
+});
+(function(){
+  const url = new URLSearchParams(location.search).get("lang");
+  let saved = null; try{ saved = localStorage.getItem("dd_lang"); }catch(e){}
+  const nav = (navigator.language || "sr").slice(0,2).toLowerCase();
+  const br = ["sr","ru","en"].includes(nav) ? nav : "sr";
+  setLang(url && I18N[url] ? url : (saved && I18N[saved] ? saved : br));
+})();
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
