@@ -901,6 +901,21 @@ body{font-weight:400}              /* tekst */
 .fab{transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s,visibility .3s}
 body.at-contact .fab{opacity:0;visibility:hidden;transform:scale(.85) translateY(8px)}
 
+/* ==========================================================
+   GALERIJA — ispravka praznog prostora u poljima na telefonu.
+   Slika je bila element mreze, a takav element ima automatsku
+   najmanju visinu jednaku svojoj sadrzini: uspravne fotografije
+   su razvlacile red i u polju je ostajao prazan prostor iznad.
+   Slika se sada postavlja apsolutno preko celog polja, pa visina
+   polja zavisi samo od mreze. Raspored i izgled su nepromenjeni.
+   ========================================================== */
+.shot{display:block;position:relative;overflow:hidden;padding:0;border:0}
+.shot img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;border-radius:inherit;
+}
+.shot--neon img{object-position:38% 33%}
+
 </style>
 <script type="application/ld+json">
 {
