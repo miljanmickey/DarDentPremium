@@ -916,6 +916,22 @@ body.at-contact .fab{opacity:0;visibility:hidden;transform:scale(.85) translateY
 }
 .shot--neon img{object-position:38% 33%}
 
+/* ==========================================================
+   ZAGLAVLJE NA TELEFONU — prekidac jezika i dugme menija idu
+   uz desnu ivicu. Razmak izmedju leve i desne strane davalo je
+   pravilo na meniju (margin-left:auto), a meni se na telefonu
+   skriva, pa je taj razmak nestajao i sve se skupljalo uz logo.
+   ========================================================== */
+@media (max-width:1080px){
+  .lang{margin-left:auto}
+}
+/* Na najuzim telefonima (360px) tri dugmeta po 44px ne staju uz logo i
+   dugme menija; sirina ide na 40px, a visina ostaje 44 pa je dodirna
+   povrsina i dalje dovoljna. */
+@media (max-width:400px){
+  .lang button{min-width:40px}
+}
+
 </style>
 <script type="application/ld+json">
 {
